@@ -47,7 +47,7 @@ class TestFileCreator:
         return re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
 
     def parse_test_class(self, line: str):
-        class_name = re.search(r'class (.*)[(,:]', line).group(1)
+        class_name = re.search(r'class (.*?)[(:]', line).group(1)
         self.output_text += 'class Test' + class_name + \
                             '(TestCase):\n'
         self.output_text += TAB + 'def setUp(self) -> None:\n'
