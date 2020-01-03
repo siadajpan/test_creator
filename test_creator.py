@@ -51,8 +51,8 @@ class TestFileCreator:
         self.output_text += 'class Test' + class_name + \
                             '(TestCase):\n'
         self.output_text += TAB + 'def setUp(self) -> None:\n'
-        self.output_text += f'{T2}self.{self.convert_camel(class_name)}: ' + \
-            f' {class_name} = {class_name}()\n\n'
+        self.output_text += f'{T2}self.{self.convert_camel(class_name)} = ' \
+                            f'{class_name}()\n\n'
 
     def parse_test_function(self, line: str):
         function_name = re.search(r'def (.*)\(', line).group(1)
