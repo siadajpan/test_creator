@@ -35,7 +35,8 @@ class TestFileCreator:
 
     def create_test_folder_structure(self):
         parent_folder = os.path.dirname(self.file_path)
-        test_folder = os.path.join(self.tests_path, parent_folder)
+        sub_folder = os.path.join(* parent_folder.split('/')[1:])
+        test_folder = os.path.join(self.tests_path, sub_folder)
         if not os.path.exists(test_folder):
             os.makedirs(test_folder)
 
