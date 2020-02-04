@@ -63,7 +63,7 @@ class TestFileCreator:
             T2 + '# then\n' + T2 + 'pass\n\n'
 
     def parse_line(self, line: str):
-        if 'class' in line:
+        if line.startswith('class'):
             self.parse_test_class(line)
 
         if 'def' in line:
